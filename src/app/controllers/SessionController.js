@@ -12,7 +12,22 @@ class SessionController {
             return res.status(401).json({ error: 'User not found' });
         }
 
-        
+        if (!(await user.checkPassword(password))) {
+            return res.status(401).json({ error: 'Password does not match' });
+        }
+
+        const { id, name } = user;
+
+        return res.json({
+            user: {
+                id,
+                name,
+                email,
+            },
+            token: jwt.sign({ id }, 'ccf7ed6e2b052dd9f1bc0026fa822efb', {
+                expiresIn: '7d',
+            }),
+        });
     }
 }
 
