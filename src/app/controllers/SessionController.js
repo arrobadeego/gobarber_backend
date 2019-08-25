@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+const authConfig = require('../../config/auth');
+
 const User = require('../models/User');
 
 class SessionController {
@@ -24,8 +26,8 @@ class SessionController {
                 name,
                 email,
             },
-            token: jwt.sign({ id }, 'ccf7ed6e2b052dd9f1bc0026fa822efb', {
-                expiresIn: '7d',
+            token: jwt.sign({ id }, authConfig.secret, {
+                expiresIn: authConfig.expiresIn,
             }),
         });
     }
