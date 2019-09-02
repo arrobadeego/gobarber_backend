@@ -5,6 +5,11 @@ const Appointment = require('../models/Appointment');
 const User = require('../models/User');
 
 class AppointmentController {
+
+    async index(req, res) {
+        return res.json();
+    }
+
     async store(req, res) {
         const schema = Yup.object().shape({
             provider_id: Yup.number().required(),
