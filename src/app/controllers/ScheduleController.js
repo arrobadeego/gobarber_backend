@@ -27,8 +27,8 @@ class ScheduleController {
                         endOfDay(parsedDate),
                     ],
                 },
-                order: ['date'],
             },
+            order: ['date'],
         });
 
         return res.json(appointments);
