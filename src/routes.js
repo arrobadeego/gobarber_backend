@@ -10,6 +10,7 @@ const ProviderController = require('./app/controllers/ProviderController');
 const AppointmentsController = require('./app/controllers/AppointmentController');
 const ScheduleController = require('./app/controllers/ScheduleController');
 const NotificationController = require('./app/controllers/NotificationController');
+const AvailableController = require('./app/controllers/AvailableController');
 
 const authMiddleware = require('./app/middlewares/auth');
 
@@ -24,6 +25,7 @@ routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 
 routes.get('/providers', ProviderController.index);
+routes.get('/providers/:providerId/available', AvailableController.index);
 
 routes.get('/appointments', AppointmentsController.index);
 routes.post('/appointments', AppointmentsController.store);
