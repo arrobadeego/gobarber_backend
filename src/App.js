@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const Sentry = require('@sentry/node');
 
+require('express-async-errors');
+
 const routes = require('./routes');
 const sentryConfig = require('./config/sentry');
 
