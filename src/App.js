@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const Sentry = require('@sentry/node');
 const routes = require('./routes');
 
 require('./database');
