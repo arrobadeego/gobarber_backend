@@ -24,6 +24,7 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.12.3",
     "util.promisify": "^1.0.0",
+    "youch": "^2.0.10",
     "yup": "^0.27.0"
   },
   "devDependencies": {
