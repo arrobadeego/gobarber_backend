@@ -72,7 +72,7 @@ class UserController {
 
         await user.update(req.body);
 
-        const { id, name, provider, avatar } = User.findByPk(req.userId, {
+        const { id, name, avatar } = User.findByPk(req.userId, {
             include: [
                 {
                     model: 'File',
