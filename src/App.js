@@ -2,6 +2,7 @@ require('dotenv/config');
 
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 const Sentry = require('@sentry/node');
 const Youch = require('youch');
 require('express-async-errors');
@@ -24,6 +25,7 @@ class App {
 
     middlewares() {
         this.server.use(Sentry.Handlers.requestHandler());
+        this.server.use(cors());
         this.server.use(express.json());
         this.server.use(
             '/files',
